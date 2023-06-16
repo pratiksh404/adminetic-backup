@@ -1,14 +1,14 @@
 # Backup Panel Module for Adminetic Admin Panel
 
-![Adminetic Backup Panel Module](https://github.com/pratiksh404/adminetic-notify/blob/main/screenshots/banner.jpg)
+![Adminetic Backup Panel Module](https://github.com/pratiksh404/adminetic-backup/blob/main/screenshots/banner.jpg)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/adminetic/notify.svg?style=flat-square)](https://packagist.org/packages/adminetic/notify)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup)
 
-[![Stars](https://img.shields.io/github/stars/pratiksh404/adminetic-notify)](https://github.com/pratiksh404/adminetic-notify/stargazers) [![Downloads](https://img.shields.io/packagist/dt/adminetic/notify.svg?style=flat-square)](https://packagist.org/packages/adminetic/notify) [![StyleCI](https://github.styleci.io/repos/618407321/shield?branch=main)](https://github.styleci.io/repos/618407321?branch=main) [![License](https://img.shields.io/github/license/pratiksh404/adminetic-notify)](//packagist.org/packages/adminetic/notify)
+[![Stars](https://img.shields.io/github/stars/pratiksh404/adminetic-backup)](https://github.com/pratiksh404/adminetic-backup/stargazers) [![Downloads](https://img.shields.io/packagist/dt/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup) [![StyleCI](https://github.styleci.io/repos/618407321/shield?branch=main)](https://github.styleci.io/repos/618407321?branch=main) [![License](https://img.shields.io/github/license/pratiksh404/adminetic-backup)](//packagist.org/packages/adminetic/backup)
 
 Backup Panel module for Adminetic Admin Panel
 
-For detailed documentaion visit [Adminetic Backup Panel Module Documentation](https://app.gitbook.com/@pratikdai404/s/adminetic/addons/notify)
+For detailed documentaion visit [Adminetic Backup Panel Module Documentation](https://app.gitbook.com/@pratikdai404/s/adminetic/addons/backup)
 
 #### Contains : -
 
@@ -110,5 +110,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## Screenshots
 
-![Backup Panel](https://github.com/pratiksh404/adminetic-notify/blob/main/screenshots/panel.jpg)
+![Backup Panel](https://github.com/pratiksh404/adminetic-backup/blob/main/screenshots/panel.jpg)
 
