@@ -17,8 +17,6 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0",
-        "masbug/flysystem-google-drive-ext": "^2.2",
         "spatie/flysystem-dropbox": "^3.0",
         "spatie/laravel-backup": "^8.1"
     },
@@ -46,11 +44,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Adminetic\\Backup\\BackupServiceProvider"
-            ],
-            "aliases": {
-                "Backup": "Adminetic\\Backup\\BackupFacade"
-            }
+                "Adminetic\\Backup\\Provider\\AdmineticBackupServiceProvider"
+            ]
         }
     }
 }

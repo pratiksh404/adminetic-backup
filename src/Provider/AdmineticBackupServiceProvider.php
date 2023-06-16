@@ -1,11 +1,12 @@
 <?php
 
-namespace Adminetic\Backup;
+namespace Adminetic\Backup\Provider;
 
 use Adminetic\Backup\Http\Livewire\AdmineticBackup;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
-class BackupServiceProvider extends ServiceProvider
+class AdmineticBackupServiceProvider extends ServiceProvider
 {
 
     public function boot()

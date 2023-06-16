@@ -4,10 +4,8 @@ namespace Adminetic\Backup\Http\Livewire;
 
 use Carbon\Carbon;
 use Livewire\Component;
-use App\Rules\PathToZip;
-use App\Rules\BackupDisk;
-use App\Jobs\CreateDBBackup;
-use Illuminate\Http\Response;
+use Adminetic\Backup\Rules\PathToZip;
+use Adminetic\Backup\Rules\BackupDisk;
 use Spatie\Backup\Helpers\Format;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\Process\Process;
@@ -231,7 +229,7 @@ class AdmineticBackup extends Component
 
     public function render()
     {
-        return view('livewire.adminetic-backup');
+        return view('backup::livewire.adminetic-backup');
     }
 
     protected function validateActiveDisk()

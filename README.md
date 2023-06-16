@@ -1,12 +1,22 @@
-# Very short description of the package
+# Backup Panel Module for Adminetic Admin Panel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup)
-[![Total Downloads](https://img.shields.io/packagist/dt/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup)
-![GitHub Actions](https://github.com/adminetic/backup/actions/workflows/main.yml/badge.svg)
+![Adminetic Backup Panel Module](https://github.com/pratiksh404/adminetic-notify/blob/main/screenshots/banner.jpg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/adminetic/notify.svg?style=flat-square)](https://packagist.org/packages/adminetic/notify)
+
+[![Stars](https://img.shields.io/github/stars/pratiksh404/adminetic-notify)](https://github.com/pratiksh404/adminetic-notify/stargazers) [![Downloads](https://img.shields.io/packagist/dt/adminetic/notify.svg?style=flat-square)](https://packagist.org/packages/adminetic/notify) [![StyleCI](https://github.styleci.io/repos/618407321/shield?branch=main)](https://github.styleci.io/repos/618407321?branch=main) [![License](https://img.shields.io/github/license/pratiksh404/adminetic-notify)](//packagist.org/packages/adminetic/notify)
+
+Backup Panel module for Adminetic Admin Panel
+
+For detailed documentaion visit [Adminetic Backup Panel Module Documentation](https://app.gitbook.com/@pratikdai404/s/adminetic/addons/notify)
+
+#### Contains : -
+
+- Backup Panel Panel
 
 ## Installation
+
+##### Composer Install:
 
 You can install the package via composer:
 
@@ -14,17 +24,68 @@ You can install the package via composer:
 composer require adminetic/backup
 ```
 
-## Usage
+##### Config Publish:
 
-```php
-// Usage description here
-```
-
-### Testing
+Publish spatie backup config
 
 ```bash
-composer test
+php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 ```
+
+##### Dropbox Configuration:
+
+Create a dropbox account and extract `DROPBOX_APP_KEY`,`DROPBOX_APP_SECRET` and `DROPBOX_ACCESS_TOKEN` to `.env`
+
+```bash
+DROPBOX_APP_KEY=
+DROPBOX_APP_SECRET=
+DROPBOX_ACCESS_TOKEN=
+```
+
+##### Register Dropbox As Disk:
+
+In `config/filesystems.php` add following code to `disks` array
+
+```bash
+   'dropbox' => [
+            'driver' => 'dropbox',
+            'key' => env('DROPBOX_APP_KEY'),
+            'secret' => env('DROPBOX_APP_SECRET'),
+            'authorization_token' => env('DROPBOX_ACCESS_TOKEN'),
+        ],
+```
+
+##### Add dropbox disk to `config/backup.php`:
+
+```html
+  'destination' => [
+
+            /*
+             * The filename prefix used for the backup zip file.
+             */
+            'filename_prefix' => '',
+
+            /*
+             * The disk names on which the backups will be stored.
+             */
+            'disks' => [
+                'local', 'dropbox'
+            ],
+        ],
+```
+```html
+  'monitor_backups' => [
+        [
+            'name' => env('APP_NAME', 'laravel-backup'),
+            'disks' => ['local', 'dropbox'],
+            'health_checks' => [
+                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
+                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumStorageInMegabytes::class => 5000,
+            ],
+        ],
+    ]
+```
+
 
 ### Changelog
 
@@ -40,13 +101,14 @@ If you discover any security related issues, please email pratikdai404@gmail.com
 
 ## Credits
 
--   [Pratik Shrestha](https://github.com/adminetic)
--   [All Contributors](../../contributors)
+- [Pratik Shrestha](https://github.com/adminetic)
+- [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
+## Screenshots
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+![Backup Panel](https://github.com/pratiksh404/adminetic-notify/blob/main/screenshots/panel.jpg)
+
