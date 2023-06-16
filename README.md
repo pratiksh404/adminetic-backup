@@ -4,7 +4,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup)
 
-[![Stars](https://img.shields.io/github/stars/pratiksh404/adminetic-backup)](https://github.com/pratiksh404/adminetic-backup/stargazers) [![Downloads](https://img.shields.io/packagist/dt/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup) [![StyleCI](https://github.styleci.io/repos/618407321/shield?branch=main)](https://github.styleci.io/repos/618407321?branch=main) [![License](https://img.shields.io/github/license/pratiksh404/adminetic-backup)](//packagist.org/packages/adminetic/backup)
+[![Stars](https://img.shields.io/github/stars/pratiksh404/adminetic-backup)](https://github.com/pratiksh404/adminetic-backup/stargazers) [![Downloads](https://img.shields.io/packagist/dt/adminetic/backup.svg?style=flat-square)](https://packagist.org/packages/adminetic/backup) [![StyleCI](https://github.styleci.io/repos/654030356/shield?branch=main)](https://github.styleci.io/repos/654030356?branch=main) [![License](https://img.shields.io/github/license/pratiksh404/adminetic-backup)](//packagist.org/packages/adminetic/backup)
 
 Backup Panel module for Adminetic Admin Panel
 
