@@ -1,4 +1,5 @@
 <?php
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -8,7 +9,7 @@ return [
     | local
     | dropbox
     | google
-    | 
+    |
     */
     'drives' => ['local'],
     /*
@@ -21,6 +22,5 @@ return [
     'GOOGLE_DRIVE_REFRESH_TOKEN' => env('GOOGLE_DRIVE_REFRESH_TOKEN', null),
     'GOOGLE_DRIVE_FOLDER_ID' => env('GOOGLE_DRIVE_FOLDER_ID', null),
 
-
-    'DROPBOX_ACCESS_TOKEN' => env('DROPBOX_ACCESS_TOKEN', null)
+    'DROPBOX_ACCESS_TOKEN' => env('DROPBOX_ACCESS_TOKEN', null),
 ];

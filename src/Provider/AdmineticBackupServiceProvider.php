@@ -8,7 +8,6 @@ use Livewire\Livewire;
 
 class AdmineticBackupServiceProvider extends ServiceProvider
 {
-
     public function boot()
     {
         if ($this->app->runningInConsole()) {
@@ -29,7 +28,7 @@ class AdmineticBackupServiceProvider extends ServiceProvider
     {
         // Publish Config File
         $this->publishes([
-            __DIR__ . '/../../config/adminetic-backup.php' => config_path('adminetic-backup.php'),
+            __DIR__.'/../../config/adminetic-backup.php' => config_path('adminetic-backup.php'),
         ], 'backup-config');
     }
 
@@ -40,9 +39,8 @@ class AdmineticBackupServiceProvider extends ServiceProvider
      */
     protected function registerResource()
     {
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'backup'); // Loading Views Files
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'backup'); // Loading Views Files
     }
-
 
     /**
      * Register Components.
@@ -60,6 +58,6 @@ class AdmineticBackupServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../../config/adminetic-backup.php', 'adminetic-backup');
+        $this->mergeConfigFrom(__DIR__.'/../../config/adminetic-backup.php', 'adminetic-backup');
     }
 }

@@ -2,23 +2,20 @@
 
 namespace Adminetic\Backup\Http\Livewire;
 
-use Carbon\Carbon;
-use Livewire\Component;
-use Adminetic\Backup\Rules\PathToZip;
 use Adminetic\Backup\Rules\BackupDisk;
-use Spatie\Backup\Helpers\Format;
-use Illuminate\Support\Facades\Cache;
-use Symfony\Component\Process\Process;
+use Adminetic\Backup\Rules\PathToZip;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Backup\BackupDestination\Backup;
 use Illuminate\Validation\ValidationException;
-use Spatie\Backup\Tasks\Backup\BackupJobFactory;
+use Livewire\Component;
+use Spatie\Backup\BackupDestination\Backup;
 use Spatie\Backup\BackupDestination\BackupDestination;
-use Symfony\Component\HttpFoundation\StreamedResponse;
+use Spatie\Backup\Helpers\Format;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
-use PavelMironchik\LaravelBackupPanel\Jobs\CreateBackupJob;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdmineticBackup extends Component
 {
@@ -40,11 +37,10 @@ class AdmineticBackup extends Component
     | 1 => Home
     | 2 => Backups
     | 3 => Backups
-    | 
-    | 
+    |
+    |
     */
     public $menu = 1;
-
 
     public function mount()
     {
@@ -75,8 +71,8 @@ class AdmineticBackup extends Component
     | - Healthy
     | - Backup Count
     | - Backup Usage
-    | 
-    | 
+    |
+    |
     */
 
     public function getBackupStatuses()
@@ -100,7 +96,7 @@ class AdmineticBackup extends Component
                 ->toArray();
         });
 
-        if (!$this->activeDisk and count($this->backupStatuses)) {
+        if (! $this->activeDisk and count($this->backupStatuses)) {
             $this->activeDisk = $this->backupStatuses[0]['disk'];
         }
 
@@ -140,8 +136,6 @@ class AdmineticBackup extends Component
                 ->toArray();
         });
     }
-
-
 
     public function deleteFile($index)
     {
@@ -186,12 +180,13 @@ class AdmineticBackup extends Component
             return $backup->path() === $filePath;
         });
 
-        if (!$backup) {
+        if (! $backup) {
             $this->emit('backup_error', 'Backup not found');
         }
 
         // Get Files
         $this->getFiles();
+
         return $this->respondWithBackupStream($backup);
     }
 
@@ -204,10 +199,11 @@ class AdmineticBackup extends Component
             'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
             'Content-Type' => 'application/zip',
             'Content-Length' => $size,
-            'Content-Disposition' => 'attachment; filename="' . $fileName . '"',
+            'Content-Disposition' => 'attachment; filename="'.$fileName.'"',
             'Pragma' => 'public',
         ];
         $this->emit('backup_success', 'Backup downloaded successfully');
+
         return response()->stream(function () use ($backup) {
             $stream = $backup->stream();
 
